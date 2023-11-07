@@ -1,0 +1,16 @@
+services:
+  # A Docker web service
+  - type: web
+    name: webdis
+    runtime: docker
+    repo: https://github.com/render-examples/webdis.git # optional
+    plan: free # optional (defaults to starter instance type)
+    branch: master # optional (defaults to master)
+    rootDir: webdis
+    dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
+    healthCheckPath: /
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1 # optional
+
