@@ -9,8 +9,4 @@ services:
     rootDir: webdis
     dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
     healthCheckPath: /
-    disk:
-      name: data
-      mountPath: /data
-      sizeGB: 1 # optional
 
