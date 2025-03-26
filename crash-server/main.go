@@ -15,9 +15,9 @@ func main() {
 	})
 
 	// Start the server in a goroutine
-	server := &http.Server{Addr: ":9090"}
+	server := &http.Server{Addr: ":10000"}
 	go func() {
-		fmt.Println("Server started on :9090")
+		fmt.Println("Server started on :10000")
 		if err := server.ListenAndServe(); err != nil && errors.Is(err, http.ErrServerClosed) {
 			fmt.Println("Server error:", err)
 		}
