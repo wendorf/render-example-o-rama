@@ -2,7 +2,7 @@ projects:
 - name: my-new-project
   environments:
   - name: my-new-environment
-    services:
+    resources:
       # A Docker web service
       - type: web
         name: webdis
