@@ -12,3 +12,4 @@ projects:
       startCommand: node app.js
     - type: keyvalue
       name: thunder
+      ipAllowList: []
