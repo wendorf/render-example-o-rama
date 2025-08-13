@@ -1,7 +1,7 @@
 projects:
-- name: my-new-project
+- name: my-second-project
   environments:
-  - name: my-third-environment
+  - name: my-fourth-environment
     services:
     # A Docker web service
     - type: web
