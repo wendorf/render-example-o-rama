@@ -1,15 +1,15 @@
-projects:
-- name: my-second-project
-  environments:
-  - name: my-fourth-environment
-    services:
-    # A Docker web service
-    - type: web
-      name: express
-      runtime: node
-      repo: https://github.com/render-examples/express-hello-world
-      buildCommand: yarn --frozen-lockfile install
-      startCommand: node app.js
-    - type: keyvalue
-      name: thunder
-      ipAllowList: []
+#projects:
+#- name: my-second-project
+#  environments:
+#  - name: my-fourth-environment
+services:
+# A Docker web service
+#    - type: web
+#      name: express
+#      runtime: node
+#      repo: https://github.com/render-examples/express-hello-world
+#      buildCommand: yarn --frozen-lockfile install
+#      startCommand: node app.js
+- type: keyvalue
+  name: thunder
+  ipAllowList: []
