@@ -13,3 +13,12 @@ projects:
     - type: keyvalue
       name: thunder
       ipAllowList: []
+    databases:
+    - name: elephant
+    envVarGroups:
+    - name: my-env-group
+      envVars:
+      - key: CONCURRENCY
+        value: 2
+      - key: SHARED_SECRET
+        generateValue: true
