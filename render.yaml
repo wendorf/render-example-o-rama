@@ -1,5 +1,5 @@
 projects:
-- name: my-second-project
+- name: my-third-project
   environments:
   - name: my-fifth-environment
     services:
