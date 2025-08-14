@@ -1,7 +1,7 @@
 projects:
 - name: my-second-project
   environments:
-  - name: my-fourth-environment
+  - name: my-fifth-environment
     services:
     # A Docker web service
     - type: web
@@ -13,6 +13,7 @@ projects:
     - type: keyvalue
       name: thunder
       ipAllowList: []
+  - name: my-sixth-environment
     databases:
     - name: elephant
     envVarGroups:
