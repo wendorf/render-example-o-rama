@@ -1,25 +1,72 @@
-projects:
-- name: my-fifth-project
-  environments:
-  - name: my-fifth-environment
-    services:
-    # A Docker web service
-    - type: web
-      name: express
-      runtime: node
-      repo: https://github.com/render-examples/express-hello-world
-      buildCommand: yarn --frozen-lockfile install
-      startCommand: node app.js
-    - type: keyvalue
-      name: thunder
-      ipAllowList: []
-  - name: my-sixth-environment
-    databases:
-    - name: elephant
-    envVarGroups:
-    - name: my-env-group
-      envVars:
-      - key: CONCURRENCY
-        value: 2
-      - key: SHARED_SECRET
-        generateValue: true
+services:
+# A Docker web service
+- type: web
+  name: fixed
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  numInstances: 3
+- type: web
+  name: autoscaling
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  scaling:
+    minInstances: 2
+    maxInstances: 10
+    targetCPUUtilization: 0.7
+- type: web
+  name: previews
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  previews:
+    numInstances: 5
+- type: web
+  name: fixed-previews
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  numInstances: 3
+  previews:
+    numInstances: 5
+- type: web
+  name: autoscaling-previews
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  previews:
+    numInstances: 5
+  scaling:
+    minInstances: 2
+    maxInstances: 10
+    targetCPUUtilization: 0.7
+- type: web
+  name: fixed-autoscaling
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  numInstances: 3
+  scaling:
+    minInstances: 2
+    maxInstances: 10
+    targetCPUUtilization: 0.7
+- type: web
+  name: fixed-autoscaling-previews
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  numInstances: 3
+  previews:
+    numInstances: 5
+  scaling:
+    minInstances: 2
+    maxInstances: 10
+    targetCPUUtilization: 0.7
