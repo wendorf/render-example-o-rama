@@ -16,7 +16,7 @@ services:
   scaling:
     minInstances: 2
     maxInstances: 10
-    targetCPUUtilization: 0.7
+    targetCPUPercent: 70
 - type: web
   name: previews
   runtime: node
@@ -45,7 +45,7 @@ services:
   scaling:
     minInstances: 2
     maxInstances: 10
-    targetCPUUtilization: 0.7
+    targetCPUPercent: 70
 - type: web
   name: fixed-autoscaling
   runtime: node
@@ -56,7 +56,7 @@ services:
   scaling:
     minInstances: 2
     maxInstances: 10
-    targetCPUUtilization: 0.7
+    targetCPUPercent: 70
 - type: web
   name: fixed-autoscaling-previews
   runtime: node
@@ -69,4 +69,4 @@ services:
   scaling:
     minInstances: 2
     maxInstances: 10
-    targetCPUUtilization: 0.7
+    targetCPUPercent: 70
