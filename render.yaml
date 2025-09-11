@@ -2,6 +2,8 @@ projects:
 - name: second-project
   environments:
   - name: second-second-environment
+    isolated: true
+    protected: protected
     services:
     # A Docker web service
     - type: web
