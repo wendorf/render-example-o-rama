@@ -1,7 +1,7 @@
 projects:
-- name: my-fifth-project
+- name: first-project
   environments:
-  - name: my-fifth-environment
+  - name: first-first-environment
     services:
     # A Docker web service
     - type: web
@@ -10,10 +10,15 @@ projects:
       repo: https://github.com/render-examples/express-hello-world
       buildCommand: yarn --frozen-lockfile install
       startCommand: node app.js
+    - type: cron
+      name: cronny
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      buildCommand: yarn --frozen-lockfile install
+      startCommand: node app.js
     - type: keyvalue
       name: thunder
       ipAllowList: []
-  - name: my-sixth-environment
     databases:
     - name: elephant
     envVarGroups:
