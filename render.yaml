@@ -4,20 +4,23 @@ projects:
   - name: second-second-environment
     services:
     # A Docker web service
-    - type: webtypo
+    - type: web
+      unsuportedKey: gnarly
       name: express
       runtime: node
       repo: https://github.com/render-examples/express-hello-world
       buildCommand: yarn --frozen-lockfile install
       startCommand: node app.js
-    - type: crontypo
+    - type: cron
+      unsuportedKey: tubular
       name: cronny
       runtime: node
       repo: https://github.com/render-examples/express-hello-world
       buildCommand: yarn --frozen-lockfile install
       startCommand: node app.js
       schedule: '0 0 1 1 *'
-    - type: keyvaluetypo
+    - type: keyvalue
+      unsuportedKey: excellent
       name: thunder
       ipAllowList: []
     databases:
