@@ -5,14 +5,12 @@ projects:
     services:
     # A Docker web service
     - type: web
-      unsuportedKey: gnarly
       name: express
       runtime: node
       repo: https://github.com/render-examples/express-hello-world
       buildCommand: yarn --frozen-lockfile install
       startCommand: node app.js
     - type: cron
-      unsuportedKey: tubular
       name: cronny
       runtime: node
       repo: https://github.com/render-examples/express-hello-world
@@ -20,15 +18,12 @@ projects:
       startCommand: node app.js
       schedule: '0 0 1 1 *'
     - type: keyvalue
-      unsuportedKey: excellent
       name: thunder
       ipAllowList: []
     databases:
     - name: elephant
-      unsupportedKey: cool
     envVarGroups:
     - name: my-env-group
-      unsuportedKey: wow
       envVars:
       - key: CONCURRENCY
         value: 2
