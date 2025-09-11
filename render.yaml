@@ -1,7 +1,7 @@
 projects:
 - name: first-project
   environments:
-  - name: first-first-environment
+  - name: first-second-environment
     services:
     # A Docker web service
     - type: web
