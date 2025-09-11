@@ -39,6 +39,8 @@ projects:
         value: 2
       - key: SHARED_SECRET
         generateValue: true
+  - name: second-fourth-environment
+    envVarGroups:
     - name: used-group
       envVars:
       - key: USED_KEY
