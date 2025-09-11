@@ -4,28 +4,31 @@ projects:
   - name: second-second-environment
     services:
     # A Docker web service
-    - type: web
+    - type: webtypo
       name: express
       runtime: node
       repo: https://github.com/render-examples/express-hello-world
       buildCommand: yarn --frozen-lockfile install
       startCommand: node app.js
-    - type: cron
+    - type: crontypo
       name: cronny
       runtime: node
       repo: https://github.com/render-examples/express-hello-world
       buildCommand: yarn --frozen-lockfile install
       startCommand: node app.js
       schedule: '0 0 1 1 *'
-    - type: keyvalue
+    - type: keyvaluetypo
       name: thunder
       ipAllowList: []
     databases:
     - name: elephant
+      unsupportedKey: cool
     envVarGroups:
     - name: my-env-group
+      unsuportedKey: wow
       envVars:
       - key: CONCURRENCY
         value: 2
+        unsupportedKey: amazing
       - key: SHARED_SECRET
         generateValue: true
