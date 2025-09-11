@@ -27,6 +27,5 @@ projects:
       envVars:
       - key: CONCURRENCY
         value: 2
-        unsupportedKey: amazing
       - key: SHARED_SECRET
         generateValue: true
