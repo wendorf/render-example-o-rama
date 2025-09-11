@@ -1,7 +1,7 @@
 projects:
 - name: second-project
   environments:
-  - name: second-second-environment
+  - name: second-third-environment
     isolated: true
     protectedStatus: protected
     services:
