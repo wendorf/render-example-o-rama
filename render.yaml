@@ -22,10 +22,6 @@ projects:
     - type: keyvalue
       name: thunder
       ipAllowList: []
-    databases:
-    - name: elephant
-  - name: second-fourth-environment
-    services:
     - type: web
       name: needs-envgroup
       runtime: node
@@ -39,6 +35,8 @@ projects:
       envVars:
       - key: USED_KEY
         value: used-value
+    databases:
+    - name: elephant
   - name: second-fifth-environment
     envVarGroups:
     - name: my-env-group
