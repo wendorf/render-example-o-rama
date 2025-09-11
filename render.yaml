@@ -24,13 +24,6 @@ projects:
       ipAllowList: []
     databases:
     - name: elephant
-    envVarGroups:
-    - name: my-env-group
-      envVars:
-      - key: CONCURRENCY
-        value: 2
-      - key: SHARED_SECRET
-        generateValue: true
   - name: second-fourth-environment
     services:
     - type: web
@@ -46,3 +39,11 @@ projects:
       envVars:
       - key: USED_KEY
         value: used-value
+  - name: second-fifth-environment
+    envVarGroups:
+    - name: my-env-group
+      envVars:
+      - key: CONCURRENCY
+        value: 2
+      - key: SHARED_SECRET
+        generateValue: true
