@@ -31,10 +31,6 @@ projects:
         value: 2
       - key: SHARED_SECRET
         generateValue: true
-    - name: used-group
-      envVars:
-      - key: USED_KEY
-        value: used-value
   - name: second-fourth-environment
     services:
     - type: web
@@ -45,3 +41,8 @@ projects:
       startCommand: node app.js
       envVars:
       - fromGroup: used-group
+    envVarGroups:
+    - name: used-group
+      envVars:
+      - key: USED_KEY
+        value: used-value
