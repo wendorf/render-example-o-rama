@@ -1,17 +1,3 @@
-services:
-- type: web
-  name: needs-envgroup
-  runtime: node
-  repo: https://github.com/render-examples/express-hello-world
-  buildCommand: yarn --frozen-lockfile install
-  startCommand: node app.js
-  envVars:
-  - fromGroup: used-group
-envVarGroups:
-- name: used-group
-  envVars:
-  - key: USED_KEY
-    value: used-value
 projects:
 - name: second-project
   environments:
@@ -36,6 +22,14 @@ projects:
     - type: keyvalue
       name: thunder
       ipAllowList: []
+    - type: web
+      name: needs-envgroup
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      buildCommand: yarn --frozen-lockfile install
+      startCommand: node app.js
+      envVars:
+      - fromGroup: used-group
     databases:
     - name: elephant
     envVarGroups:
@@ -45,3 +39,7 @@ projects:
         value: 2
       - key: SHARED_SECRET
         generateValue: true
+    - name: used-group
+      envVars:
+      - key: USED_KEY
+        value: used-value
