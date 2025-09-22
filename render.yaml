@@ -25,8 +25,8 @@ projects:
       name: needs-envgroup
       runtime: node
       repo: https://github.com/render-examples/express-hello-world
-      buildCommand: yarn --frozen-lockfile install
-      startCommand: node app.js
+      buildCommand: yarn --frozen-lockfile install --whatever
+      startCommand: node app.js --whatever
       envVars:
       - fromGroup: used-group
     envVarGroups:
