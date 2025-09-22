@@ -1,3 +1,11 @@
+services:
+# A Docker web service
+- type: web
+  name: express
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
 projects:
 - name: second-project
   environments:
@@ -5,13 +13,6 @@ projects:
     isolated: true
     protectedStatus: protected
     services:
-    # A Docker web service
-    - type: web
-      name: express
-      runtime: node
-      repo: https://github.com/render-examples/express-hello-world
-      buildCommand: yarn --frozen-lockfile install
-      startCommand: node app.js
     - type: cron
       name: cronny
       runtime: node
