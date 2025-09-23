@@ -11,6 +11,7 @@ projects:
   environments:
   - name: second-third-environment
     isolated: true
+    protectedStatus: protected
     services:
     - type: cron
       name: cronny
@@ -38,7 +39,6 @@ projects:
     databases:
     - name: elephant
   - name: second-fifth-environment
-    protectedStatus: protected
     envVarGroups:
     - name: my-env-group
       envVars:
