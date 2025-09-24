@@ -49,6 +49,7 @@ projects:
 - name: third-project
   environments:
   - name: third-first-environment
+    isolated: true
     services:
     - type: web
       name: express-two
