@@ -10,10 +10,6 @@ projects:
 - name: second-project
   environments:
   - name: second-third-environment
-    networking:
-      isolation: fabled
-    permissions:
-      protection: enabled
     services:
     - type: cron
       name: cronny
