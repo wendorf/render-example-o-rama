@@ -48,6 +48,14 @@ projects:
         value: 2
       - key: SHARED_SECRET
         generateValue: true
+  - name: second-sixth-environment
+    services:
+    - type: web
+      name: throaway
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      buildCommand: yarn --frozen-lockfile install
+      startCommand: node app.js
 - name: third-project
   environments:
   - name: third-first-environment
