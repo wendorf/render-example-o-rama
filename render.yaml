@@ -48,7 +48,11 @@ projects:
         value: 2
       - key: SHARED_SECRET
         generateValue: true
-  - name: second-sixth-environment
+  - name: second-seventh-environment
+    networking:
+      isolation: enabled
+    permissions:
+      protection: enabled
     services:
     - type: web
       name: throaway
