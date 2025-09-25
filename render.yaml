@@ -48,9 +48,9 @@ projects:
         value: 2
       - key: SHARED_SECRET
         generateValue: true
-  - name: second-seventh-environment
+  - name: second-eighth-environment
     networking:
-      isolation: enabled
+      isolation: fabled
     permissions:
       protection: enabled
     services:
