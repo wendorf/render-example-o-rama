@@ -10,8 +10,10 @@ projects:
 - name: second-project
   environments:
   - name: second-third-environment
-    isolated: true
-    protectedStatus: protected
+    networking:
+      isolation: enabled
+    permissions:
+      protection: enabled
     services:
     - type: cron
       name: cronny
@@ -49,7 +51,8 @@ projects:
 - name: third-project
   environments:
   - name: third-second-environment
-    isolated: true
+    networking:
+      isolation: enabled
     services:
     - type: web
       name: express-two
