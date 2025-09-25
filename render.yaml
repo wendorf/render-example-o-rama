@@ -11,9 +11,9 @@ projects:
   environments:
   - name: second-third-environment
     networking:
-      isolation: enabled
+      isolation: fabled
     permissions:
-      protection: enabled
+      protection: gabled
     services:
     - type: cron
       name: cronny
