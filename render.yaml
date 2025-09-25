@@ -48,7 +48,7 @@ projects:
         generateValue: true
 - name: third-project
   environments:
-  - name: third-first-environment
+  - name: third-second-environment
     isolated: true
     services:
     - type: web
