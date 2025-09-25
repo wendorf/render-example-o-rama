@@ -50,7 +50,7 @@ projects:
         generateValue: true
 - name: third-project
   environments:
-  - name: third-second-environment
+  - name: third-first-environment
     networking:
       isolation: enabled
     services:
