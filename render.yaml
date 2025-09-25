@@ -52,7 +52,7 @@ projects:
     networking:
       isolation: fabled
     permissions:
-      protection: gabled
+      protection: enabled
     services:
     - type: web
       name: throaway
