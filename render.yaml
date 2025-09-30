@@ -81,8 +81,13 @@ projects:
       - source: 203.0.113.4/30
         description: with-description
       - source: 198.51.100.1
+    - type: keyvalue
+      name: red-present-ip-allowlist
+      ipAllowList:
+      - source: 203.0.113.4/30
+        description: with-description
+      - source: 198.51.100.1
     databases:
-    - name: db-default-ip-allowlist
     - name: db-default-ip-allowlist
     - name: db-empty-ip-allowlist
       ipAllowList: []
@@ -92,7 +97,6 @@ projects:
         description: with-description
       - source: 198.51.100.1
     envVarGroups:
-    - name: evg-default-envVars
     - name: evg-default-envVars
     - name: evg-empty-envVars
       envVars: []
