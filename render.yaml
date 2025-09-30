@@ -6,20 +6,6 @@ services:
   repo: https://github.com/render-examples/express-hello-world
   buildCommand: yarn --frozen-lockfile install
   startCommand: node app.js
-- type: cron
-  name: cronny
-  runtime: node
-  repo: https://github.com/render-examples/express-hello-world
-  buildCommand: yarn --frozen-lockfile install
-  startCommand: node app.js
-  schedule: '0 0 1 1 *'
-- type: keyvalue
-  name: thunder
-  ipAllowList: []
-databases:
-- name: elephant
-envVarGroups:
-- name: evg-default-envVars
 projects:
 - name: second-project
   environments:
@@ -29,6 +15,16 @@ projects:
     permissions:
       protection: disabled
     services:
+    - type: cron
+      name: cronny
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      buildCommand: yarn --frozen-lockfile install
+      startCommand: node app.js
+      schedule: '0 0 1 1 *'
+    - type: keyvalue
+      name: thunder
+      ipAllowList: []
     - type: web
       name: needs-envgroup
       runtime: node
@@ -42,6 +38,8 @@ projects:
       envVars:
       - key: USED_KEY
         value: used-value
+    databases:
+    - name: elephant
   - name: second-fifth-environment
     envVarGroups:
     - name: my-env-group
@@ -93,6 +91,7 @@ projects:
         description: with-description
       - source: 198.51.100.1
     envVarGroups:
+    - name: evg-default-envVars
     - name: evg-empty-envVars
       envVars: []
     - name: evg-present-envVars
