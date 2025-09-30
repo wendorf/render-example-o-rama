@@ -92,6 +92,7 @@ projects:
       - source: 198.51.100.1
     envVarGroups:
     - name: evg-default-envVars
+    - name: evg-default-envVars
     - name: evg-empty-envVars
       envVars: []
     - name: evg-present-envVars
