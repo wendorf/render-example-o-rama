@@ -1,6 +1,53 @@
+services:
+# A Docker web service
+- type: web
+  name: express
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
 projects:
 - name: second-project
   environments:
+  - name: second-third-environment
+    networking:
+      isolation: disabled
+    permissions:
+      protection: disabled
+    services:
+    - type: cron
+      name: cronny
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      buildCommand: yarn --frozen-lockfile install
+      startCommand: node app.js
+      schedule: '0 0 1 1 *'
+    - type: keyvalue
+      name: thunder
+      ipAllowList: []
+    - type: web
+      name: needs-envgroup
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      buildCommand: yarn --frozen-lockfile install --whatever
+      startCommand: node app.js --whatever
+      envVars:
+      - fromGroup: used-group
+    envVarGroups:
+    - name: used-group
+      envVars:
+      - key: USED_KEY
+        value: used-value
+    databases:
+    - name: elephant
+  - name: second-fifth-environment
+    envVarGroups:
+    - name: my-env-group
+      envVars:
+      - key: CONCURRENCY
+        value: 2
+      - key: SHARED_SECRET
+        generateValue: true
   - name: second-eighth-environment
     networking:
       isolation: fabled
@@ -13,3 +60,41 @@ projects:
       repo: https://github.com/render-examples/express-hello-world
       buildCommand: yarn --frozen-lockfile install
       startCommand: node app.js
+- name: third-project
+  environments:
+  - name: third-first-environment
+    networking:
+      isolation: enabled
+    services:
+    - type: web
+      name: express-two
+      runtime: node
+      repo: https://github.com/render-examples/express-hello-world
+      buildCommand: yarn --frozen-lockfile install
+      startCommand: node app.js
+    - type: keyvalue
+      name: red-empty-ip-allowlist
+      ipAllowList: []
+    - type: keyvalue
+      name: red-present-ip-allowlist
+      ipAllowList:
+      - source: 203.0.113.4/30
+        description: with-description
+      - source: 198.51.100.1
+    databases:
+    - name: db-default-ip-allowlist
+    - name: db-empty-ip-allowlist
+      ipAllowList: []
+    - name: db-present-ip-allowlist
+      ipAllowList:
+      - source: 203.0.113.4/30
+        description: with-description
+      - source: 198.51.100.1
+    envVarGroups:
+    - name: evg-default-envVars
+    - name: evg-empty-envVars
+      envVars: []
+    - name: evg-present-envVars
+      envVars:
+      - key: PRESENT_KEY
+        value: present-value
