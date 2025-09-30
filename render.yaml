@@ -6,22 +6,20 @@ services:
   repo: https://github.com/render-examples/express-hello-world
   buildCommand: yarn --frozen-lockfile install
   startCommand: node app.js
-ungrouped:
-  services:
-  - type: cron
-    name: cronny
-    runtime: node
-    repo: https://github.com/render-examples/express-hello-world
-    buildCommand: yarn --frozen-lockfile install
-    startCommand: node app.js
-    schedule: '0 0 1 1 *'
-  - type: keyvalue
-    name: thunder
-    ipAllowList: []
-  databases:
-  - name: elephant
-  envVarGroups:
-  - name: evg-default-envVars
+- type: cron
+  name: cronny
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  schedule: '0 0 1 1 *'
+- type: keyvalue
+  name: thunder
+  ipAllowList: []
+databases:
+- name: elephant
+envVarGroups:
+- name: evg-default-envVars
 projects:
 - name: second-project
   environments:
