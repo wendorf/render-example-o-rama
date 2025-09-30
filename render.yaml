@@ -83,6 +83,7 @@ projects:
       - source: 198.51.100.1
     databases:
     - name: db-default-ip-allowlist
+    - name: db-default-ip-allowlist
     - name: db-empty-ip-allowlist
       ipAllowList: []
     - name: db-present-ip-allowlist
