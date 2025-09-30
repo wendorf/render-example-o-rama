@@ -6,6 +6,14 @@ services:
   repo: https://github.com/render-examples/express-hello-world
   buildCommand: yarn --frozen-lockfile install
   startCommand: node app.js
+ungrouped:
+  services:
+  - type: keyvalue
+    name: red-present-ip-allowlist
+    ipAllowList:
+    - source: 203.0.113.4/30
+      description: with-description
+    - source: 198.51.100.1
 projects:
 - name: second-project
   environments:
@@ -75,12 +83,6 @@ projects:
     - type: keyvalue
       name: red-empty-ip-allowlist
       ipAllowList: []
-    - type: keyvalue
-      name: red-present-ip-allowlist
-      ipAllowList:
-      - source: 203.0.113.4/30
-        description: with-description
-      - source: 198.51.100.1
     - type: keyvalue
       name: red-present-ip-allowlist
       ipAllowList:
