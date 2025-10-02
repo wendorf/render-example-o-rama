@@ -4,16 +4,16 @@ envVarGroups:
   - key: STABLE_KEY
     value: stable-value
   - key: REMOVABLE_KEY
-    value: removable-value
+    value: changed-value
 - name: evg-remove-envVars
   envVars:
   - key: STABLE_KEY
     value: stable-value
-  - key: REMOVABLE_KEY
-    value: removable-value
 - name: evg-add-envVars
   envVars:
   - key: STABLE_KEY
     value: stable-value
   - key: REMOVABLE_KEY
+    value: removable-value
+  - key: ADDED_KEY
     value: removable-value
