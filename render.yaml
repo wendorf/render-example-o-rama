@@ -1,10 +1,4 @@
 envVarGroups:
-- name: evg-nochange-envVars
-  envVars:
-  - key: STABLE_KEY
-    value: stable-value
-  - key: REMOVABLE_KEY
-    value: changed-value
 - name: evg-remove-envVars
   envVars:
   - key: STABLE_KEY
@@ -17,3 +11,14 @@ envVarGroups:
     value: removable-value
   - key: ADDED_KEY
     value: removable-value
+projects:
+- name: foo
+  environments:
+  - name: bar
+    envVarGroups:
+    - name: evg-nochange-envVars
+      envVars:
+      - key: STABLE_KEY
+        value: stable-value
+      - key: REMOVABLE_KEY
+        value: changed-value
