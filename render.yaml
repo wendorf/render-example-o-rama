@@ -21,4 +21,4 @@ projects:
       - key: STABLE_KEY
         value: stable-value
       - key: REMOVABLE_KEY
-        value: changed-value
+        value: removable-value
