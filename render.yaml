@@ -1,22 +1,19 @@
 envVarGroups:
-- name: duplicate
+- name: evg-nochange-envVars
   envVars:
-  - key: FIRST_KEY
-    value: first-value
-- name: duplicate
+  - key: STABLE_KEY
+    value: stable-value
+  - key: REMOVABLE_KEY
+    value: removable-value
+- name: evg-remove-envVars
   envVars:
-  - key: SECOND_KEY
-    value: second-value
-- name: duplicate
+  - key: STABLE_KEY
+    value: stable-value
+  - key: REMOVABLE_KEY
+    value: removable-value
+- name: evg-add-envVars
   envVars:
-  - key: THIRD_KEY
-    value: third-value
-services:
-- type: web
-  name: needs-envgroup
-  runtime: node
-  repo: https://github.com/render-examples/express-hello-world
-  buildCommand: yarn --frozen-lockfile install --whatever
-  startCommand: node app.js --whatever
-  envVars:
-  - fromGroup: duplicate
+  - key: STABLE_KEY
+    value: stable-value
+  - key: REMOVABLE_KEY
+    value: removable-value
