@@ -1,24 +1,15 @@
-envVarGroups:
-- name: evg-remove-envVars
-  envVars:
-  - key: STABLE_KEY
-    value: stable-value
-- name: evg-add-envVars
-  envVars:
-  - key: STABLE_KEY
-    value: stable-value
-  - key: REMOVABLE_KEY
-    value: removable-value
-  - key: ADDED_KEY
-    value: removable-value
-projects:
-- name: foo
-  environments:
-  - name: bar
-    envVarGroups:
-    - name: evg-nochange-envVars
-      envVars:
-      - key: STABLE_KEY
-        value: stable-value
-      - key: REMOVABLE_KEY
-        value: removable-value
+ungrouped:
+  services:
+  - type: web
+    name: svc-linked
+    runtime: node
+    repo: https://github.com/render-examples/express-hello-world
+    buildCommand: yarn --frozen-lockfile install
+    startCommand: node app.js
+    envVars:
+      fromGroup: evg-linked
+  envVarGroups:
+  - name: evg-linked
+    envVars:
+    - key: LINKED_KEY
+      value: linked-value
