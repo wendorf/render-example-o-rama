@@ -1,23 +1,14 @@
-projects:
-- name: project-linked
-  environments:
-  - name: env-linked
-    services:
-    - type: web
-      name: svc-linked
-      runtime: node
-      repo: https://github.com/render-examples/express-hello-world
-      buildCommand: yarn --frozen-lockfile install
-      startCommand: node app.js
-      envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: db-linked
-          property: connectionString
-    databases:
-    - name: db-linked
-    envVarGroups:
-    - name: evg-linked
-      envVars:
-      - key: LINKED_KEY
-        value: linked-value
+services:
+- type: web
+  name: svc-linked
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn --frozen-lockfile install
+  startCommand: node app.js
+  envVars:
+  - key: DATABASE_URL
+    fromDatabase:
+      name: db-linked
+      property: connectionString
+databases:
+- name: db-linked
