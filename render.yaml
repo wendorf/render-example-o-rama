@@ -7,7 +7,7 @@ ungrouped:
     buildCommand: yarn --frozen-lockfile install
     startCommand: node app.js
     envVars:
-      fromGroup: evg-linked
+    - fromGroup: evg-linked
   envVarGroups:
   - name: evg-linked
     envVars:
