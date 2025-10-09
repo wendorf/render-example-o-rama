@@ -1,9 +1,17 @@
+ungrouped:
+  envVarGroups:
+  - name: "testTest"
+    envVars:
+    - key: "TEST_VAR"
+      value: "test"
+
 projects:
 - name: "Dumbleton"
   environments:
   - name: "Production"
     networking:
       isolation: "enabled"
+  - name: "Staging"
     services:
     - type: web
       runtime: "node"
@@ -12,4 +20,3 @@ projects:
       plan: "free"
       buildCommand: "npm install"
       startCommand: "npm run start"
-  - name: "Staging"
