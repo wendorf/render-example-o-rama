@@ -1,7 +1,7 @@
 projects:
 - name: basic
   environments:
-  - name: first
+  - name: second
     services:
     - type: web
       name: basic
