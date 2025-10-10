@@ -11,6 +11,7 @@ projects:
   - name: "Production"
     networking:
       isolation: "enabled"
+  - name: "Staging"
     services:
     - type: web
       runtime: "node"
@@ -20,4 +21,3 @@ projects:
       buildCommand: "npm install"
       startCommand: "npm run start"
       region: "ohio"
-  - name: "Staging"
