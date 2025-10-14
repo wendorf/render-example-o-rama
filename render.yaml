@@ -15,8 +15,9 @@ projects:
     - type: web
       runtime: "node"
       name: "test-test"
-      repo: "https://github.com/render-examples/express-hello-world"
+      repo: "https://github.com/bdumbleton/dumbleton.git"
       plan: "free"
       buildCommand: "npm install"
       startCommand: "npm run start"
+      region: "ohio"
   - name: "Staging"
