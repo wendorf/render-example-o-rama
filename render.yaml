@@ -6,7 +6,7 @@ ungrouped:
       value: "test"
 
 projects:
-- name: "DumbletonTwo"
+- name: "Dumbleton"
   environments:
   - name: "Production"
     networking:
