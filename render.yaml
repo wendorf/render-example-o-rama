@@ -20,3 +20,12 @@ projects:
       plan: "free"
       buildCommand: "npm install"
       startCommand: "npm run start"
+  - name: "StagingTwo"
+    services:
+    - type: web
+      runtime: "node"
+      name: "test-two"
+      repo: "https://github.com/bdumbleton/dumbleton.git"
+      plan: "free"
+      buildCommand: "npm install"
+      startCommand: "npm run start"
