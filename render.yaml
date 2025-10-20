@@ -1,21 +1,16 @@
-projects:
-- name: "Dumbleton"
-  environments:
-  - name: "Staging"
-    networking:
-      isolation: "enabled"
-    envVarGroups:
-    - name: "testTest"
-      envVars:
-      - key: "TEST_VAR"
-        value: "test"
-    services:
-    - type: web
-      runtime: "node"
-      name: "test-test"
-      repo: "https://github.com/render-examples/express-hello-world.git"
-      plan: "free"
-      buildCommand: "npm install"
-      startCommand: "npm run start"
-      envVars:
-      - fromGroup: "testTest"
+ungrouped:
+  envVarGroups:
+  - name: "testTest"
+    envVars:
+    - key: "TEST_VAR"
+      value: "test"
+  services:
+  - type: web
+    runtime: "node"
+    name: "test-test"
+    repo: "https://github.com/render-examples/express-hello-world.git"
+    plan: "free"
+    buildCommand: "npm install"
+    startCommand: "npm run start"
+    envVars:
+    - fromGroup: "testTest"
