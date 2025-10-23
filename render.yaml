@@ -19,3 +19,5 @@ projects:
       startCommand: "npm run start"
       envVars:
       - fromGroup: "testTest"
+    databases:
+    - name: foo
