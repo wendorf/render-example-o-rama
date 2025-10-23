@@ -1,7 +1,7 @@
 projects:
 - name: "Dumbleton"
   environments:
-  - name: "Staging"
+  - name: "Production"
     networking:
       isolation: "enabled"
     envVarGroups:
