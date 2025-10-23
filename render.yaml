@@ -17,7 +17,5 @@ projects:
       plan: "free"
       buildCommand: "npm install"
       startCommand: "npm run start"
-      envVars:
-      - fromGroup: "testTest"
     databases:
     - name: foo
