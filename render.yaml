@@ -1,5 +1,5 @@
 projects:
-- name: "NewProject"
+- name: "NewProject2"
   environments:
   - name: "Production"
     networking:
