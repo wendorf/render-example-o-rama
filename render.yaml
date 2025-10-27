@@ -1,5 +1,5 @@
 projects:
-- name: "Dumbleton"
+- name: "NewProject"
   environments:
   - name: "Production"
     networking:
