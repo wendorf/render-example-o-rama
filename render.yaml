@@ -1,0 +1,20 @@
+services:
+- name: source
+  type: web
+  runtime: static
+  buildCommand: echo "<h1>Hello</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
+  routes: &source-routes
+  - type: redirect
+    source: /hemandhaw
+    destination: /greeting.html
+  - type: redirect
+    source: /wonder
+    destination: /greeting.html
+  - type: redirect
+    source: /amuse
+    destination: /greeting.html
+- name: copy
+  type: web
+  runtime: static
+  buildCommand: echo "<h1>Hello</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
+  routes: *source-routes
