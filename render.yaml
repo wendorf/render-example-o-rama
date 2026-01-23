@@ -3,6 +3,7 @@ services:
   type: web
   runtime: static
   buildCommand: echo "<h1>Hello</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
+  staticPublishPath: .
   routes: &source-routes
   - type: redirect
     source: /hemandhaw
@@ -17,4 +18,5 @@ services:
   type: web
   runtime: static
   buildCommand: echo "<h1>Hello</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
+  staticPublishPath: .
   routes: *source-routes
