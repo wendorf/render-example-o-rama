@@ -1,0 +1,11 @@
+services:
+- name: canyon
+  type: web
+  runtime: static
+  buildCommand: echo "<h1>Hello</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
+  staticPublishPath: .
+- name: sandcat
+  type: web
+  runtime: static
+  buildCommand: echo "<h1>Hello</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
+  staticPublishPath: .
