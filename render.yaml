@@ -1,13 +1,16 @@
 ---
 services:
-  - name: sinatra-app
-    type: web
-    runtime: ruby
-    repo: https://github.com/render-examples/sinatra
-    buildCommand: bundle install
-    startCommand: bundle exec ruby app.rb
-  - name: nginx-proxy
-    type: web
-    runtime: image
-    image:
-      url: docker.io/library/nginx:latest
+- name: native-to-image
+  type: web
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  buildCommand: yarn install --frozen-lockfile
+  startCommand: node app.js
+  envVars:
+  - key: NODE_ENV
+    value: production
+- name: image-to-native
+  type: web
+  runtime: image
+  image:
+    url: docker.io/library/nginx:latest
