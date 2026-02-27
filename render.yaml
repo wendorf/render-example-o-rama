@@ -1,6 +1,6 @@
 ---
 services:
-- name: native-to-image
+- name: image-to-native
   type: web
   runtime: node
   repo: https://github.com/render-examples/express-hello-world
@@ -9,7 +9,7 @@ services:
   envVars:
   - key: NODE_ENV
     value: production
-- name: image-to-native
+- name: native-to-image
   type: web
   runtime: image
   image:
