@@ -4,7 +4,8 @@ previews:
 
 services:
 - name: static
-  type: static
+  type: web
+  runtime: static
   staticPublishPath: .
   buildCommand: "true"
 - name: image-to-native
