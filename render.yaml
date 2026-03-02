@@ -1,4 +1,7 @@
 ---
+previews:
+  generation: automatic
+
 services:
 - name: image-to-native
   type: web
