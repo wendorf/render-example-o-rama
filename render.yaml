@@ -2,7 +2,7 @@ services:
 - name: source
   type: web
   runtime: static
-  buildCommand: echo "<h1>Hello there</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
+  buildCommand: echo "<h1>Hello, there</h1>" > greeting.html && echo "<h1>Plastics</h1>" > advice.html
   staticPublishPath: .
   routes: &source-routes
   - type: redirect
