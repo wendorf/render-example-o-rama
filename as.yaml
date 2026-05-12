@@ -17,8 +17,8 @@ projects:
   artifactSources:
   - name: ingester
     git:
-      repo: https://github.com/acme/data-ingester
-      branch: release/2026.05
+      repo: https://github.com/render-examples/express-hello-world
+      branch: crc/add-confetti
       runtime: docker
       region: oregon
       buildCommand: make ingester
