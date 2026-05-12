@@ -1,0 +1,37 @@
+version: "1"
+
+# Top-level AS: git-based, minimal — sits at the root, no project
+artifactSources:
+- name: express-hello-world
+  git:
+    repo: https://github.com/render-examples/express-hello-world
+    branch: main
+    runtime: node
+
+projects:
+- name: data-pipeline
+  environments:
+  - name: prod
+  # In-project AS: git-based, the elaborate one — exercises buildCommand,
+  # dockerfilePath, region override, baseDir, rootDir
+  artifactSources:
+  - name: ingester
+    git:
+      repo: https://github.com/acme/data-ingester
+      branch: release/2026.05
+      runtime: docker
+      region: frankfurt
+      buildCommand: make ingester
+      dockerfilePath: ./ingester/Dockerfile
+      baseDir: ./ingester
+      rootDir: ./ingester/src
+
+ungrouped:
+  # Ungrouped AS: image-based, points at a private registry with credentials
+  artifactSources:
+  - name: pinned-nginx
+    image:
+      url: ghcr.io/acme-corp/nginx-hardened:1.27-prod
+      creds:
+        fromRegistryCreds:
+          name: ghcr-acme
