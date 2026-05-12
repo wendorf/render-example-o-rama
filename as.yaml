@@ -31,7 +31,4 @@ ungrouped:
   artifactSources:
   - name: pinned-nginx
     image:
-      url: ghcr.io/acme-corp/nginx-hardened:1.27-prod
-      creds:
-        fromRegistryCreds:
-          name: ghcr-acme
+      url: dhi.io/ruby:4-debian13-dev
