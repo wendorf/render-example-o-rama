@@ -20,7 +20,7 @@ projects:
       repo: https://github.com/acme/data-ingester
       branch: release/2026.05
       runtime: docker
-      region: frankfurt
+      region: oregon
       buildCommand: make ingester
       dockerfilePath: ./ingester/Dockerfile
       baseDir: ./ingester
