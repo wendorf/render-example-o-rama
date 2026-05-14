@@ -1,0 +1,25 @@
+version: "1"
+
+# Top-level AS: git-based, minimal — sits at the root, no project
+artifactSources:
+- name: top-level
+  image:
+    url: docker.io/library/ruby:3.4.9-slim-bookworm
+
+projects:
+- name: data-pipeline
+  environments:
+  - name: prod
+  # In-project AS: git-based, the elaborate one — exercises buildCommand,
+  # dockerfilePath, region override, baseDir, rootDir
+  artifactSources:
+  - name: in-project
+    image:
+      url: docker.io/library/ruby:3.4.9-slim-bookworm
+
+ungrouped:
+  # Ungrouped AS: image-based, points at a private registry with credentials
+  artifactSources:
+  - name: ungrouped
+    image:
+      url: docker.io/library/ruby:3.4.9-slim-bookworm
