@@ -1,0 +1,32 @@
+buildSources:
+- name: express-hello
+  git:
+    repo: https://github.com/render-examples/express-hello-world
+    branch: main
+    runtime: node
+    buildCommand: npm install
+
+services:
+# Uses the shared build source.
+- name: hello-from-source
+  type: web
+  plan: free
+  buildSource: express-hello
+  startCommand: node app.js
+
+# Also uses the build source, but commented out.
+# - name: hello-from-source-disabled
+#   type: web
+#   plan: free
+#   buildSource: express-hello
+#   startCommand: node app.js
+
+# Defines its own source and build; does not use the build source.
+- name: hello-self-defined
+  type: web
+  plan: free
+  runtime: node
+  repo: https://github.com/render-examples/express-hello-world
+  branch: main
+  buildCommand: npm install
+  startCommand: node app.js
