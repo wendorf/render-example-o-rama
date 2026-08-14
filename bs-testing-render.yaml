@@ -14,12 +14,11 @@ services:
   buildSource: express-hello
   startCommand: node app.js
 
-# Also uses the build source, but commented out.
-# - name: hello-from-source-disabled
-#   type: web
-#   plan: free
-#   buildSource: express-hello
-#   startCommand: node app.js
+- name: hello-from-source-disabled
+  type: web
+  plan: free
+  buildSource: express-hello
+  startCommand: node app.js
 
 # Defines its own source and build; does not use the build source.
 - name: hello-self-defined
